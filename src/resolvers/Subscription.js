@@ -1,10 +1,18 @@
 const Subscription = {
-    matchUpdate: {
-        subscribe(parent, args, ctx, info){
-            const {id} = args;
-            const {pubsub} = ctx;
-            return pubsub.asyncIterator(id);
-        }
+  matchUpdate: {
+    subscribe(parent, args, ctx, info) {
+      const { id } = args;
+      const { pubsub } = ctx;
+      return pubsub.asyncIterator(id);
     }
-}
-export {Subscription as default}
+  },
+
+  teamUpdate: {
+    subscribe(parent, args, ctx, info) {
+        const {id} = args;
+        const {pubsub} = ctx;
+        return pubsub.asyncIterator(id);
+      }
+  }
+};
+export { Subscription as default };
